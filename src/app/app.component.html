@@ -1,6 +1,8 @@
 <header>
   <nav>
-    <img src="assets/images/Logo-sawki.png" alt="Logo Sawki" class="site-logo">
+    <a routerLink="/" (click)="closeNav()">
+      <img src="assets/images/Logo-sawki.png" alt="Logo Sawki" class="site-logo">
+    </a>
     <button class="nav-toggle" (click)="toggleNav()" aria-label="Ouvrir le menu">&#9776;</button>
     <div class="nav-links" [class.open]="navOpen">
       <ul>
@@ -12,7 +14,6 @@
           <li><a routerLink="/contact" (click)="closeNav()">Contact</a></li>
         </span>
         <li class="spacer"></li>
-        <li class="menu-message-link"><a routerLink="/list" (click)="closeNav()">administrateur</a></li>
         <li *ngIf="isAuthenticated()"><button (click)="logout(); closeNav()">Déconnexion</button></li>
       </ul>
     </div>
